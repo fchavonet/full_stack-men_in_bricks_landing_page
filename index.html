@@ -1,22 +1,124 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html class="text-neutral-200 bg-neutral-950 scroll-smooth" lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Men in Bricks - Podcast</title>
-    <meta name="description" content="">
+    <meta name="description" content="Men in Bricks, un podcast pour les passionnés de LEGO®.">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
 
-    <!-- Script-->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <!-- DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Ausha Player -->
+    <script src="https://player.ausha.co/ausha-player.js" defer></script>
+
+    <!-- Script -->
     <script src="./script.js" defer></script>
 </head>
 
-<body>
+<body id="top">
+    <!-- CONTAINER -->
+    <div class="max-w-6xl mx-auto px-4">
+        <!-- HEADER -->
+        <header class="sticky top-4 h-18 px-4 flex flex-row justify-center md:justify-between items-center border border-neutral-800 rounded-2xl bg-neutral-900/75 backdrop-blur-md shadow-2xl z-50">
+            <a class="move-to-top group flex flex-row justify-center items-center gap-4" href="#top">
+                <img class="h-10 group-hover:drop-shadow-[0_0_6px_var(--yellow)] transition-drop-shadow duration-150" src="./assets/images/logo-men_in_bricks.webp" alt="Logo Men in Bricks">
+                <h1 class="text-lg font-semibold group-hover:text-[var(--yellow)] transition-colors duration-150">Men in Bricks</h1>
+            </a>
 
+            <nav class="hidden md:block" aria-label="Navigation principale">
+                <ul class="flex flex-row justify-center items-center gap-2 text-neutral-400">
+                    <li>
+                        <a class="block w-20 h-10 flex flex-row justify-center items-center text-sm font-medium hover:text-neutral-200 rounded-xl hover:bg-neutral-800 transition-colors duration-150" href="#listen" data-target="listen">
+                            Écouter
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="block w-20 h-10 flex flex-row justify-center items-center text-sm font-medium hover:text-neutral-200 rounded-xl hover:bg-neutral-800 transition-colors duration-150" href="#about" data-target="about">
+                            À propos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="group block h-10 ms-4 px-4 flex flex-row justify-center items-center gap-1 text-sm font-bold text-neutral-950 rounded-xl bg-[var(--yellow)] hover:bg-white hover:drop-shadow-[0_0_6px_var(--yellow)] hover:scale-105 transition-all duration-300" href="https://podcast.ausha.co/meninbricks" target="_blank" rel="noopener noreferrer">
+                            S'abonner <i class="fa-solid fa-headphones group-hover:rotate-12 transition-transform duration-300" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- MAIN -->
+        <main>
+            <section id="hero" class="h-screen pt-4">
+                <h2 class="">Accueil</h2>
+            </section>
+
+            <section id="listen" class="h-screen pt-22">
+                <h2 class="mt-4 mb-4 text-2xl font-bold">
+                    <i class="fa-solid fa-headphones text-[var(--yellow)]" aria-hidden="true"></i>
+                    <span>Écouter</span>
+                </h2>
+            </section>
+
+            <section id="about" class="h-screen pt-22">
+                <h2 class="mt-4 mb-4 text-2xl font-bold ">
+                    <i class="fa-solid fa-cube text-[var(--yellow)]" aria-hidden="true"></i>
+                    <span>À propos</span>
+                </h2>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="pt-4 pb-8 md:py-4 flex flex-col xl:flex-row justify-center xl:justify-between items-center text-xs text-center text-neutral-400 border-t border-neutral-800">
+            <div class="flex flex-col md:flex-row justify-center items-center">
+                <p>© <span id="copyright-year"></span> Men in Bricks</p>
+                <span class="hidden md:inline">&nbsp;-&nbsp;</span>
+                <p>Fait avec le <i class="fa-solid fa-heart text-red-500" aria-hidden="true"></i> et plein de petites briques...</p>
+            </div>
+
+            <p>LEGO® est une marque commerciale du groupe LEGO qui ne sponsorise, n’autorise et ne soutient pas ce site.</p>
+        </footer>
+
+        <nav class="sticky bottom-4 h-18 px-4 flex md:hidden border border-neutral-800 rounded-2xl bg-neutral-900/75 backdrop-blur-md shadow-2xl z-50" aria-label="Navigation mobile">
+            <ul class="w-full flex flex-row justify-evenly items-center gap-2">
+                <li class="flex-1">
+                    <a class="move-to-top flex flex-col justify-center items-center gap-2 cursor-pointer" href="#top">
+                        <i class="fa-solid fa-house text-xl"></i>
+                        <span class="text-sm">Accueil</span>
+                    </a>
+                </li>
+
+                <li class="flex-1">
+                    <a class="flex flex-col justify-center items-center gap-2 cursor-pointer" href="#listen" data-target="listen">
+                        <i class="fa-solid fa-headphones text-xl"></i>
+                        <span class="text-sm">Écouter</span>
+                    </a>
+                </li>
+
+                <li class="flex-1">
+                    <a class="flex flex-col justify-center items-center gap-2 cursor-pointer" href="#about" data-target="about">
+                        <i class="fa-solid fa-cube text-xl"></i>
+                        <span class="text-sm">À propos</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <button class="move-to-top hidden xl:block fixed right-4 bottom-4 text-4xl text-[var(--yellow)] cursor-pointer" type="button" aria-label="Revenir en haut de la page">
+        <i class="fa-solid fa-circle-up" aria-hidden="true"></i>
+    </button>
 </body>
 
 </html>
