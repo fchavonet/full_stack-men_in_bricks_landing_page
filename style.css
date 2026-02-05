@@ -1,3 +1,9 @@
 :root {
     --yellow: #e9d90a;
 }
+
+#ausha-player {
+  width: 100%;
+  height: 420px;
+  border: none;
+}
