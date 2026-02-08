@@ -25,11 +25,11 @@
     <script src="./script.js" defer></script>
 </head>
 
-<body id="top">
+<body id="top" class="antialiased ">
     <!-- CONTAINER -->
     <div class="max-w-6xl mx-auto px-4">
         <!-- HEADER -->
-        <header class="sticky top-4 h-18 px-4 flex flex-row justify-center md:justify-between items-center border border-neutral-800 rounded-2xl bg-neutral-900/75 backdrop-blur-md shadow-2xl z-50">
+        <header class="sticky top-4 h-18 px-4 flex flex-row justify-start md:justify-between items-center border border-neutral-800 rounded-2xl bg-neutral-900/75 backdrop-blur-md shadow-2xl z-50">
             <a class="move-to-top group flex flex-row justify-center items-center gap-4" href="#top">
                 <img class="h-10 group-hover:drop-shadow-[0_0_6px_var(--yellow)] transition-drop-shadow duration-150" src="./assets/images/logo-men_in_bricks.webp" alt="Logo Men in Bricks">
                 <h1 class="text-lg font-semibold group-hover:text-[var(--yellow)] transition-colors duration-150">Men in Bricks</h1>
@@ -38,20 +38,21 @@
             <nav class="hidden md:block" aria-label="Navigation principale">
                 <ul class="flex flex-row justify-center items-center gap-2 text-neutral-400">
                     <li>
-                        <a class="block w-20 h-10 flex flex-row justify-center items-center text-sm font-medium hover:text-neutral-200 rounded-xl hover:bg-neutral-800 transition-colors duration-150" href="#listen" data-target="listen">
+                        <a class="block w-20 h-10 flex flex-row justify-center items-center text-sm font-medium hover:text-[var(--yellow)] rounded-xl hover:bg-neutral-800 transition-colors duration-150" href="#listen" data-target="listen">
                             Écouter
                         </a>
                     </li>
 
                     <li>
-                        <a class="block w-20 h-10 flex flex-row justify-center items-center text-sm font-medium hover:text-neutral-200 rounded-xl hover:bg-neutral-800 transition-colors duration-150" href="#about" data-target="about">
+                        <a class="block w-20 h-10 flex flex-row justify-center items-center text-sm font-medium hover:text-[var(--yellow)] rounded-xl hover:bg-neutral-800 transition-colors duration-150" href="#about" data-target="about">
                             À propos
                         </a>
                     </li>
 
                     <li>
                         <a class="group block h-10 ms-4 px-4 flex flex-row justify-center items-center gap-1 text-sm font-bold text-neutral-950 rounded-xl bg-[var(--yellow)] hover:bg-white hover:drop-shadow-[0_0_6px_var(--yellow)] hover:scale-105 transition-all duration-300" href="https://podcast.ausha.co/meninbricks" target="_blank" rel="noopener noreferrer">
-                            S'abonner <i class="fa-solid fa-headphones group-hover:rotate-12 transition-transform duration-300" aria-hidden="true"></i>
+                            S'abonner <i class="fa-solid fa-microphone group-hover:rotate-12 transition-transform duration-300"></i>
+                            </i>
                         </a>
                     </li>
                 </ul>
@@ -60,8 +61,46 @@
 
         <!-- MAIN -->
         <main>
-            <section id="hero" class="pt-4">
+            <section id="hero" class="mt-12 md:mt-26 px-8 flex flex-col md:flex-row justify-center md:justify-between items-center gap-8">
                 <h2 class="hidden">Accueil</h2>
+
+                <div class="order-2 md:order-1 w-full md:w-1/2 flex flex-col justify-center items-start gap-4 md:gap-8">
+                    <p class="text-4xl md:text-6xl font-black">
+                        <span>Un podcast pour les</span>
+                        <span class="text-[var(--yellow)]">passionnés de LEGO<span class="font-normal">®</span></span>
+                    </p>
+
+                    <p class="text-md md:text-lg text-neutral-400 leading-relaxed">Discussions, actus et nostalgie autour de la brique. Un format convivial animé par des fans, pour les fans.</p>
+
+                    <ul class="flex flex-row justify-start items-center gap-2 text-neutral-400">
+                        <li>
+                            <a class="group block h-10 me-4 px-4 flex flex-row justify-center items-center gap-1 text-sm font-bold text-neutral-950 rounded-xl bg-[var(--yellow)] hover:bg-white hover:drop-shadow-[0_0_6px_var(--yellow)] hover:scale-105 transition-all duration-300" href="#listen" data-target="listen">
+                                <i class="fa-solid fa-circle-play"></i> Écouter
+                            </a>
+                        </li>
+
+                        <li class="tooltip tooltip-bottom tooltip-yellow" data-tip="Apple Podcast"> <a class="block w-10 h-10 flex flex-row justify-center items-center text-sm font-medium hover:text-[var(--yellow)] rounded-xl bg-neutral-800 hover:-translate-y-1 transition-all duration-150" href="https://podcasts.apple.com/us/podcast/men-in-bricks/id1475883466" aria-label="Écouter sur Apple Podcast" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-apple" aria-hidden="true"></i>
+                            </a>
+                        </li>
+
+                        <li class="tooltip tooltip-bottom tooltip-yellow" data-tip="Deezer">
+                            <a class="block w-10 h-10 flex flex-row justify-center items-center text-sm font-medium hover:text-[var(--yellow)] rounded-xl bg-neutral-800 hover:-translate-y-1 transition-all duration-150" href="https://www.deezer.com/fr/show/433582" aria-label="Écouter sur Deezer" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-deezer" aria-hidden="true"></i>
+                            </a>
+                        </li>
+
+                        <li class="tooltip tooltip-bottom tooltip-yellow" data-tip="Spotify">
+                            <a class="block w-10 h-10 flex flex-row justify-center items-center text-sm font-medium hover:text-[var(--yellow)] rounded-xl bg-neutral-800 hover:-translate-y-1 transition-all duration-150" href="https://open.spotify.com/show/6AVUTWzIk1AbINItINKdvm" aria-label="Écouter sur Spotify" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-spotify" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="order-1 md:order-2 w-full md:w-1/2 h-75 md:h-100 flex flex-row justify-center md:justify-end items-center">
+                    <img class="h-75 md:h-100" src="./assets/images/minifigure-superman.webp" alt="Minifigure Men in Bricks en mode Superman">
+                </div>
             </section>
 
             <section id="listen" class="pt-26">
