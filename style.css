@@ -1,7 +1,9 @@
+/* VARIABLES */
 :root {
-    --yellow: #e9d90a;
+  --yellow: #e9d90a;
 }
 
+/* AUSHA */
 #ausha-player {
   width: 100%;
   height: 420px;
