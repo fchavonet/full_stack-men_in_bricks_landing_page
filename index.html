@@ -21,6 +21,23 @@
     <!-- Ausha Player -->
     <script src="https://player.ausha.co/ausha-player.js" defer></script>
 
+    <!-- Three.js -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+
+    <!--  -->
+    <script type="module" defer>
+        import { initViewer } from './viewer.js';
+
+        initViewer('lego-viewer', './assets/obj/mib.obj', './assets/obj/mib.mtl');
+    </script>
+
     <!-- Script -->
     <script src="./script.js" defer></script>
 </head>
@@ -32,7 +49,7 @@
         <header class="sticky top-4 h-18 px-4 flex flex-row justify-start md:justify-between items-center border border-neutral-800 rounded-2xl bg-neutral-900/75 backdrop-blur-md shadow-2xl z-50">
             <!-- Brand -->
             <a class="move-to-top group flex flex-row justify-center items-center gap-4" href="#top">
-                <img class="h-10 group-hover:drop-shadow-[0_0_6px_var(--yellow)] transition-all duration-150" src="./assets/images/logo-men_in_bricks.webp" alt="Logo Men in Bricks">
+                <img class="h-10 group-hover:drop-shadow-[0_0_6px_var(--yellow)] transition-all duration-150" src="./assets/images/logo-men_in_bricks.webp" loading="lazy" alt="Logo Men in Bricks">
                 <h1 class="text-lg font-bold group-hover:text-[var(--yellow)] transition-colors duration-150">Men in Bricks</h1>
             </a>
 
@@ -52,8 +69,14 @@
                     </li>
 
                     <li>
-                        <a class="group block h-10 ms-4 px-4 flex flex-row justify-center items-center gap-1 text-sm font-bold text-neutral-950 rounded-xl bg-[var(--yellow)] hover:bg-white hover:drop-shadow-[0_0_6px_var(--yellow)] hover:scale-105 transition-all duration-300" href="https://podcast.ausha.co/meninbricks" target="_blank" rel="noopener noreferrer">
-                            S'abonner <i class="fa-solid fa-microphone group-hover:rotate-12 transition-transform duration-300"></i>
+                        <a class="block w-20 h-10 flex flex-row justify-center items-center text-sm font-medium hover:text-[var(--yellow)] rounded-xl hover:bg-neutral-800 transition-colors duration-150" href="#goodies" data-target="goodies">
+                            Goodies
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="group block h-10 ms-4 px-4 flex flex-row justify-center items-center gap-1 text-sm font-bold text-neutral-950 rounded-xl bg-[var(--yellow)] hover:bg-white hover:drop-shadow-[0_0_6px_var(--yellow)] hover:scale-102 transition-all duration-300" href="https://podcast.ausha.co/meninbricks" target="_blank" rel="noopener noreferrer">
+                            S'abonner <i class="fa-solid fa-microphone group-hover:rotate-12 transition-transform duration-300" aria-hidden="true"></i>
                         </a>
                     </li>
                 </ul>
@@ -65,7 +88,7 @@
             <!-- Hero section -->
             <section id="hero" class="mt-14 md:mt-28 px-6 flex flex-col md:flex-row justify-center md:justify-between items-center gap-8">
                 <!-- Title -->
-                <h2 class="hidden">Accueil</h2>
+                <h2 class="sr-only">Accueil</h2>
 
                 <!-- Hero content -->
                 <div class="order-2 md:order-1 w-full md:w-1/2 flex flex-col justify-center items-start gap-4 md:gap-8">
@@ -78,8 +101,8 @@
 
                     <ul class="flex flex-row justify-start items-center gap-2 text-neutral-400">
                         <li>
-                            <a class="group block h-10 me-4 px-4 flex flex-row justify-center items-center gap-1 text-sm font-bold text-neutral-950 rounded-xl bg-[var(--yellow)] hover:bg-white hover:drop-shadow-[0_0_6px_var(--yellow)] hover:scale-105 transition-all duration-300" href="#listen" data-target="listen">
-                                <i class="fa-solid fa-circle-play"></i> Écouter
+                            <a class="group block h-10 me-4 px-4 flex flex-row justify-center items-center gap-1 text-sm font-bold text-neutral-950 rounded-xl bg-[var(--yellow)] hover:bg-white hover:drop-shadow-[0_0_6px_var(--yellow)] hover:scale-102 transition-all duration-300" href="#listen" data-target="listen">
+                                <i class="fa-solid fa-circle-play" aria-hidden="true"></i> Écouter
                             </a>
                         </li>
 
@@ -103,7 +126,7 @@
                 </div>
 
                 <div class="order-1 md:order-2 w-full md:w-1/2 h-auto md:h-100 flex flex-row justify-center md:justify-end items-center">
-                    <img class="max-h-100 transform -scale-x-100 md:scale-x-100" src="./assets/images/minifigure-superman.webp" alt="Minifigure Men in Bricks en mode Superman">
+                    <img class="max-h-100 transform -scale-x-100 md:scale-x-100" src="./assets/images/minifigure-superman.webp" loading="lazy" alt="Minifigure Men in Bricks en mode Superman">
                 </div>
             </section>
 
@@ -119,7 +142,7 @@
                         <span>Écouter</span>
                     </h2>
 
-                    <p class="mb-4 text-neutral-400 leading-relaxed">Plongez dans l'univers de <span class="text-[var(--yellow)]">Men in Bricks</span> avec nos derniers épisodes.</p>
+                    <p class="mb-4 text-neutral-400 leading-relaxed">Plongez dans l'univers de <a class="text-[var(--yellow)] decoration-1 hover:underline underline-offset-4" href="https://podcast.ausha.co/meninbricks" target="_blank" rel="noopener noreferrer">Men in Bricks</a> avec nos derniers épisodes.</p>
 
                     <!-- Ausha player-->
                     <iframe id="ausha-player" class="border border-neutral-800 rounded-lg bg-neutral-950" title="Ausha Podcast Player" loading="lazy" src="https://player.ausha.co/?showId=B1nn7t1z1VrQ&color=%23ffcf00&display=horizontal&multishow=false&playlist=true&dark=true&v=3"></iframe>
@@ -132,42 +155,42 @@
                     <!-- About container -->
                     <div class="w-full md:w-1/2 flex flex-col justify-between items-center gap-8">
                         <!-- About informations -->
-                        <div class="group relative w-full p-4 flex flex-col justify-center items-start gap-4 border border-neutral-800 rounded-2xl bg-neutral-900/75 backdrop-blur-md shadow-2xl">
+                        <div class="group relative w-full p-4 flex flex-col justify-center items-start border border-neutral-800 rounded-2xl bg-neutral-900/75 backdrop-blur-md shadow-2xl">
                             <!-- Hover highlight -->
                             <div class="absolute top-0 right-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--yellow)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                             <!-- Title -->
-                            <h2 class="flex flex-row justify-center items-center gap-3 text-2xl font-bold">
-                                <img class="w-6" src="./assets/images/lego-brick.webp" alt="Brique LEGO®">
+                            <h2 class="mb-2 flex flex-row justify-center items-center gap-3 text-2xl font-bold">
+                                <img class="w-5" src="./assets/images/lego-brick-yellow.webp" alt="">
                                 <span>À propos</span>
                             </h2>
 
                             <!-- -->
-                            <p class="text-neutral-400 leading-relaxed">
-                                <span class="text-[var(--yellow)]">Men in Bricks</span>, c’est l’histoire de trois amis passionnés de LEGO® qui ont décidé de partager leur hobby au micro.
-                                <br>
+                            <p class="mb-4 text-neutral-400 leading-relaxed">
+                                <a class="text-[var(--yellow)] decoration-1 hover:underline underline-offset-4" href="https://podcast.ausha.co/meninbricks" target="_blank" rel="noopener noreferrer">Men in Bricks</a>, c’est l’histoire de trois amis passionnés de LEGO® qui ont décidé de partager leur hobby au micro.
+                                <br><br>
                                 Au fil des épisodes, l’équipe alterne entre nouveautés marquantes, discussions thématiques, retours nostalgiques et formats hors-série plus ciblés, toujours avec bonne humeur et bienveillance.
-                                <br>
+                                <br><br>
                                 Que vous soyez constructeur occasionnel ou collectionneur assidu, l’objectif reste le même : échanger, apprendre et célébrer ensemble la brique, sans prise de tête.
                             </p>
 
                             <!-- Social media -->
                             <div class="w-full flex flex-row justify-start items-center gap-2">
                                 <a class="w-1/2 h-10 py-2 px-4 flex flex-row justify-center items-center gap-4 text-sm font-bold rounded-xl bg-neutral-800 hover:bg-[#5865F2] transition-colors duration-300" href="https://discord.gg/gahcj3AYZm" target="_blank" rel="noopener noreferrer">
-                                    <i class="fa-brands fa-discord text-xl"></i>
+                                    <i class="fa-brands fa-discord text-xl" aria-hidden="true"></i>
                                     Discord
                                 </a>
 
                                 <a class="w-1/2 h-10 py-2 px-4 flex flex-row justify-center items-center gap-4 text-sm font-bold rounded-xl bg-neutral-800 hover:bg-[#E1306C] transition-colors duration-300" href="https://www.instagram.com/meninbricks/" target="_blank" rel="noopener noreferrer">
-                                    <i class="fa-brands fa-instagram text-xl"></i>
+                                    <i class="fa-brands fa-instagram text-xl" aria-hidden="true"></i>
                                     Instagram
                                 </a>
                             </div>
                         </div>
 
                         <!-- Statistics -->
-                        <div class="relative w-full mt-50 md:mt-0 mb-8 md:mb-0 p-4 flex flex-col justify-center items-center border border-neutral-800 rounded-2xl bg-neutral-900/75 backdrop-blur-md shadow-2xl">
-                            <img class="absolute -top-49.5 left-1/2 -translate-x-1/2 h-50 pe-18 transform -scale-x-100 md:scale-x-100 z-50" src="./assets/images/minifigure-batman.webp" alt="Minifigure Men in Bricks en mode Batman">
+                        <div class="relative w-full mt-75 md:mt-0 mb-8 md:mb-0 p-4 flex flex-col justify-center items-center border border-neutral-800 rounded-2xl bg-neutral-900/75 backdrop-blur-md shadow-2xl">
+                            <img class="absolute -top-74 left-1/2 -translate-x-1/2 h-75 pe-18 transform -scale-x-100 md:scale-x-100 z-50" src="./assets/images/minifigure-batman.webp" loading="lazy" alt="Minifigure Men in Bricks en mode Batman">
 
                             <div class="w-full flex flex-row justify-evenly items-center gap-4">
                                 <div class="w-1/3 flex flex-col justify-center items-center">
@@ -238,7 +261,55 @@
                             </figure>
                         </div>
 
-                        <!-- Testimonial 003 -->
+                        <!-- Testimonial 004 -->
+                        <div class="group relative w-full p-4 flex flex-col justify-center items-start border border-neutral-800 rounded-2xl bg-neutral-900/75 backdrop-blur-md shadow-2xl">
+                            <!-- Hover highlight -->
+                            <div class="absolute top-0 right-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--yellow)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                            <h3 class="text-lg font-bold">LE podcast référence des fans de LEGO® francophones</h3>
+
+                            <div class="mb-2 text-xs text-[var(--yellow)]">
+                                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            </div>
+
+                            <figure>
+                                <blockquote>
+                                    <p class="mb-2 text-xs italic leading-relaxed text-neutral-400">On sent la passion et l’expertise dans chacune des phrases. Et tout le talent du podcast est de réussir à nous communiquer cette passion. Seul défaut : ça donne grave envie de faire chauffer la CB pour des LEGO® !</p>
+                                </blockquote>
+
+                                <figcaption class="text-[var(--yellow)] font-semibold">i.am.Baptiste</figcaption>
+                            </figure>
+                        </div>
+
+                        <!-- Testimonial 004 -->
+                        <div class="group relative w-full p-4 flex flex-col justify-center items-start border border-neutral-800 rounded-2xl bg-neutral-900/75 backdrop-blur-md shadow-2xl">
+                            <!-- Hover highlight -->
+                            <div class="absolute top-0 right-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--yellow)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                            <h3 class="text-lg font-bold">Au top</h3>
+
+                            <div class="mb-2 text-xs text-[var(--yellow)]">
+                                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            </div>
+
+                            <figure>
+                                <blockquote>
+                                    <p class="mb-2 text-xs italic leading-relaxed text-neutral-400">Je vous adore... Si vous arrivez à enregistrer à distance pendant ce confinement ce serait top !!! Merci à vous en tout cas.</p>
+                                </blockquote>
+
+                                <figcaption class="text-[var(--yellow)] font-semibold">Juljulie885</figcaption>
+                            </figure>
+                        </div>
+
+                        <!-- Testimonial 005 -->
                         <div class="group relative w-full p-4 flex flex-col justify-center items-start border border-neutral-800 rounded-2xl bg-neutral-900/75 backdrop-blur-md shadow-2xl">
                             <!-- Hover highlight -->
                             <div class="absolute top-0 right-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--yellow)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -261,42 +332,20 @@
                                 <figcaption class="text-[var(--yellow)] font-semibold">Virgile51</figcaption>
                             </figure>
                         </div>
-
-                        <!-- Testimonial 004 -->
-                        <div class="group relative w-full p-4 flex flex-col justify-center items-start border border-neutral-800 rounded-2xl bg-neutral-900/75 backdrop-blur-md shadow-2xl">
-                            <!-- Hover highlight -->
-                            <div class="absolute top-0 right-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--yellow)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                            <h3 class="text-lg font-bold">LE podcast référence des fans de LEGO® francophones</h3>
-
-                            <div class="mb-2 text-xs text-[var(--yellow)]">
-                                <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                <i class="fa-solid fa-star" aria-hidden="true"></i>
-                                <i class="fa-solid fa-star" aria-hidden="true"></i>
-                            </div>
-
-                            <figure>
-                                <blockquote>
-                                    <p class="mb-2 text-xs italic leading-relaxed text-neutral-400">On sent la passion et l’expertise dans chacune des phrases. Et tout le talent du podcast est de réussir à nous communiquer cette passion. Seul défaut : ça donne grave envie de faire chauffer la CB pour des Legos !</p>
-                                </blockquote>
-
-                                <figcaption class="text-[var(--yellow)] font-semibold">i.am.Baptiste</figcaption>
-                            </figure>
-                        </div>
                     </div>
                 </div>
 
-                <div class="w-full mt-18 flex flex-col justify-center items-center gap-8">
-                    <h2 class="text-4xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-neutral-200 to-neutral-300">La <span class="text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 to-[var(--yellow)]">Team</span></h2>
+                <div class="w-full mt-16 flex flex-col justify-center items-center gap-8">
+                    <h2 class="text-4xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-neutral-200 to-neutral-300">
+                        La <span class="text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 to-[var(--yellow)]">Team</span>
+                    </h2>
 
                     <div class="w-full flex flex-col md:flex-row justify-center gap-8">
+                        <!-- Alexis -->
                         <div class="group relative w-full md:w-1/3 p-4 pt-5 flex flex-col justify-center items-center gap-4 border border-neutral-800 rounded-2xl bg-neutral-900/75 backdrop-blur-md shadow-2xl">
                             <!-- Hover highlight -->
                             <div class="absolute top-0 right-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--yellow)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <img class="w-30 h-30 flex rounded-full border border-4 border-[var(--yellow)] bg-neutral-950" src="./assets/images/avatar-alexis.webp" alt="Alexis">
-
+                            <img class="w-30 h-30 flex rounded-full border border-4 border-[var(--yellow)] bg-neutral-950" src="./assets/images/avatar-alexis.webp" loading="lazy" alt="Alexis">
 
                             <div class="w-full flex flex-col justify-center items-center">
                                 <p class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-neutral-200 to-neutral-300">Alexis</p>
@@ -304,10 +353,11 @@
                             </div>
                         </div>
 
+                        <!-- Aurélie -->
                         <div class="group relative w-full md:w-1/3 p-4 pt-5 flex flex-col justify-center items-center gap-4 border border-neutral-800 rounded-2xl bg-neutral-900/75 backdrop-blur-md shadow-2xl">
                             <!-- Hover highlight -->
                             <div class="absolute top-0 right-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--yellow)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <img class="w-30 h-30 flex rounded-full border border-4 border-[var(--yellow)] bg-neutral-950" src="./assets/images/avatar-aurelie.webp" alt="Aurélie">
+                            <img class="w-30 h-30 flex rounded-full border border-4 border-[var(--yellow)] bg-neutral-950" src="./assets/images/avatar-aurelie.webp" loading="lazy" alt="Aurélie">
 
                             <div class="w-full flex flex-col justify-center items-center">
                                 <p class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-neutral-200 to-neutral-300">Aurélie</p>
@@ -315,10 +365,11 @@
                             </div>
                         </div>
 
+                        <!-- Panda -->
                         <div class="group relative w-full md:w-1/3 p-4 pt-5 flex flex-col justify-center items-center gap-4 border border-neutral-800 rounded-2xl bg-neutral-900/75 backdrop-blur-md shadow-2xl">
                             <!-- Hover highlight -->
                             <div class="absolute top-0 right-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--yellow)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <img class="w-30 h-30 flex rounded-full border border-4 border-[var(--yellow)] bg-neutral-950" src="./assets/images/avatar-panda.webp" alt="Panda">
+                            <img class="w-30 h-30 flex rounded-full border border-4 border-[var(--yellow)] bg-neutral-950" src="./assets/images/avatar-panda.webp" loading="lazy" alt="Panda">
 
                             <div class="w-full flex flex-col justify-center items-center">
                                 <p class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-neutral-200 to-neutral-300">Panda</p>
@@ -326,6 +377,169 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <!-- Goodies section -->
+            <section id="goodies" class="w-full flex flex-col justify-center items-center gap-4">
+                <div class="group relative w-full mt-26 p-4 flex flex-col justify-center items-start border border-neutral-800 rounded-2xl bg-neutral-900/75 backdrop-blur-md shadow-2xl">
+                    <!-- Hover highlight -->
+                    <div class="absolute top-0 right-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--yellow)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                    <!-- Title -->
+                    <h2 class="mb-2 text-2xl font-bold">
+                        <i class="fa-solid fa-basket-shopping text-[var(--yellow)]" aria-hidden="true"></i>
+                        <span>Goodies</span>
+                    </h2>
+
+                    <!-- Description -->
+                    <p class="text-neutral-400 leading-relaxed">
+                        Les bonus de <a class="text-[var(--yellow)] decoration-1 hover:underline underline-offset-4" href="https://podcast.ausha.co/meninbricks" target="_blank" rel="noopener noreferrer">Men in Bricks</a> : apparitions dans d’autres médias, contenus qui parlent de nous et créations originales à découvrir.
+                    </p>
+                </div>
+
+                <!-- Blockbusters -->
+                <div class="w-full flex flex-col lg:flex-row justify-center items-stretch gap-4">
+                    <div class="w-full lg:w-1/2 flex flex-col justify-center items-center gap-4">
+                        <div class="group relative w-full p-4 flex flex-col justify-center items-start border border-neutral-800 rounded-2xl bg-neutral-900/75 backdrop-blur-md shadow-2xl">
+                            <!-- Hover highlight -->
+                            <div class="absolute top-0 right-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--yellow)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                            <!-- Title -->
+                            <h2 class="mb-2 text-2xl font-bold">
+                                <i class="fa-solid fa-microphone-lines text-[var(--yellow)]" aria-hidden="true"></i>
+                                <span>Blockbusters</span>
+                            </h2>
+
+                            <!-- Description -->
+                            <p class="mb-4 text-neutral-400 leading-relaxed">
+                                Alexis était l’invité du podcast <a class="text-[var(--yellow)] decoration-1 hover:underline underline-offset-4" href="https://www.radiofrance.fr/franceinter/podcasts/blockbusters/tellement-n-brique-5330629" target="_blank" rel="noopener noreferrer">Blockbusters</a> !
+                                <br><br>
+                                L’émission, animée par <a class="text-[var(--yellow)] decoration-1 hover:underline underline-offset-4" href="https://fr.wikipedia.org/wiki/Fr%C3%A9d%C3%A9rick_Sigrist" target="_blank" rel="noopener noreferrer">Frédérick Sigrist</a>, décrypte un phénomène de culture populaire en compagnie d’invités prestigieux. Ici, la discussion revient sur la passion LEGO®, ce qu’elle raconte de la pop culture et pourquoi la brique rassemble autant.
+                                <br><br>
+                                Un épisode à (re)découvrir ci-dessous !!!
+                            </p>
+
+                            <!-- Audio player -->
+                            <audio class="w-full" controls preload="none">
+                                <source src="https://media.radiofrance-podcast.net/podcast09/17309-29.07.2020-ITEMA_22392028-2020F28653S0211-1779455909.mp3" type="audio/mpeg">
+                                Votre navigateur ne supporte pas l'audio HTML5.
+                            </audio>
+                        </div>
+
+                        <!-- Briques Mag -->
+                        <div class="group relative w-full p-4 flex flex-col lg:flex-row justify-between items-stretch gap-4 border border-neutral-800 rounded-2xl bg-neutral-900/75 backdrop-blur-md shadow-2xl">
+                            <!-- Hover highlight -->
+                            <div class="absolute top-0 right-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--yellow)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                            <div class="w-full lg:w-1/2 flex flex-col justify-between items-center">
+                                <div>
+                                    <!-- Title -->
+                                    <h2 class="mb-2 text-2xl font-bold">
+                                        <i class="fa-solid fa-newspaper text-[var(--yellow)]" aria-hidden="true"></i>
+                                        <span>Briques Mag</span>
+                                    </h2>
+
+                                    <!-- Description -->
+                                    <p class="text-neutral-400 leading-relaxed">
+                                        Le magazine <a class="text-[var(--yellow)] decoration-1 hover:underline underline-offset-4" href="https://jmag286.wixsite.com/briquesmag1" target="_blank" rel="noopener noreferrer">Briques Mag</a> nous a consacré quelques pages dans lesquelles nous revenons sur les origines de <a class="text-[var(--yellow)] decoration-1 hover:underline underline-offset-4" href="https://podcast.ausha.co/meninbricks" target="_blank" rel="noopener noreferrer">Men in Bricks</a> et ce qui fait l’ADN du podcast : la passion de la brique.
+                                        <br><br>
+                                        Merci à <a class="text-[var(--yellow)] decoration-1 hover:underline underline-offset-4" href="https://www.instagram.com/sebastienlegomasters/?hl=fr" target="_blank" rel="noopener noreferrer">Sébastien Mauvais</a>, rédacteur en chef du magazine, pour ce joli coup de projecteur !
+                                    </p>
+                                </div>
+
+                                <!-- Desktop download button -->
+                                <a class="hidden group w-full h-10 mt-4 px-4 lg:flex flex-row justify-center items-center gap-1 text-sm font-bold text-neutral-950 rounded-xl bg-[var(--yellow)] hover:bg-white hover:drop-shadow-[0_0_6px_var(--yellow)] hover:scale-102 transition-all duration-300" href="./assets/pdf/briques_mag.pdf" download="Briques Mag - Article sur Men in Bricks.pdf">
+                                    <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i> Télécharger l'article
+                                </a>
+                            </div>
+
+                            <!-- Image -->
+                            <img class="w-full lg:w-1/2 rounded bg-white" src="./assets/images/goodies-briquesmag.webp" loading="lazy" alt="Couverture du numéro de Briques Mag">
+
+                            <!-- Mobile download button -->
+                            <a class="lg:hidden group block w-full h-10 mt-4 px-4 flex flex-row justify-center items-center gap-1 text-sm font-bold text-neutral-950 rounded-xl bg-[var(--yellow)] hover:bg-white hover:drop-shadow-[0_0_6px_var(--yellow)] hover:scale-102 transition-all duration-300" href="./assets/pdf/briques_mag.pdf" download="Briques Mag - Article sur Men in Bricks.pdf">
+                                <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i> Télécharger l'article
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Logo instructions -->
+                    <div class="group relative w-full lg:w-1/2 p-4 flex flex-col border border-neutral-800 rounded-2xl bg-neutral-900/75 backdrop-blur-md shadow-2xl">
+                        <!-- Hover highlight -->
+                        <div class="absolute top-0 right-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--yellow)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                        <div class="w-full flex flex-col flex-1">
+                            <!-- Title -->
+                            <h2 class="mb-4 text-2xl font-bold">
+                                <i class="fa-solid fa-book-open text-[var(--yellow)]" aria-hidden="true"></i>
+                                <span>Instructions</span>
+                            </h2>
+
+                            <!-- Description-->
+                            <p class="mb-4 text-neutral-400 leading-relaxed">
+                                Tout le monde aura reconnu la référence, le nom du podcast <a class="text-[var(--yellow)] decoration-1 hover:underline underline-offset-4" href="https://podcast.ausha.co/meninbricks" target="_blank" rel="noopener noreferrer">Men in Bricks</a> s’est imposé assez rapidement.
+                                <br>
+                                Restait l’étape la plus difficile, concevoir un logo à la hauteur de cette inspiration !
+                                <br><br>
+                                Plutôt que d’opter pour une version graphique, nous avons choisi l’évidence : un logo construit en vraies briques LEGO®.
+                                <br><br>
+                                Après quelques essais et plusieurs itérations, découvrez ci-dessous la version définitive, ainsi que les instructions de montage si vous souhaitez le reproduire chez vous...
+                            </p>
+
+                            <!-- Viewer -->
+                            <div id="lego-viewer" class="w-full min-h-[225px] flex-1 border border-neutral-800 rounded-xl bg-neutral-950 cursor-grab"></div>
+                        </div>
+
+                        <!--  Download button -->
+                        <a class="mt-4 group block w-full h-10 px-4 flex flex-row justify-center items-center gap-1 text-sm font-bold text-neutral-950 rounded-xl bg-[var(--yellow)] hover:bg-white hover:drop-shadow-[0_0_6px_var(--yellow)] hover:scale-102 transition-all duration-300" href="./assets/pdf/instructions.pdf" download="Instructions - Logo Men in Bricks">
+                            <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i> Télécharger les instructions
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Custom Minifigure -->
+                <div class="group relative w-full p-4 flex flex-col justify-start items-start border border-neutral-800 rounded-2xl bg-neutral-900/75 backdrop-blur-md shadow-2xl">
+                    <!-- Hover highlight -->
+                    <div class="absolute top-0 right-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--yellow)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                    <!-- Title -->
+                    <h2 class="mb-2 text-2xl font-bold">
+                        <i class="fa-solid fa-user-astronaut text-[var(--yellow)]" aria-hidden="true"></i>
+                        <span>Custom Minifigure Men in Bricks</span>
+                    </h2>
+
+                    <!-- Description -->
+                    <p class="mb-4 text-neutral-400 leading-relaxed">
+                        Nous en rêvions, nous l’avons fait : une custom Minifigure <a class="text-[var(--yellow)] decoration-1 hover:underline underline-offset-4" href="https://podcast.ausha.co/meninbricks" target="_blank" rel="noopener noreferrer">Men in Bricks</a> !
+                        <br>
+                        Designée par l’équipe et pensée comme une pièce de collection, découvrez les images de notre goodies ci-dessous <i class="fa-solid fa-square-caret-down text-[var(--yellow)] translate-y-0.5" aria-hidden="true"></i>
+                    </p>
+
+                    <!-- Images -->
+                    <div class="w-full mb-4 flex flex-col md:flex-row justify-between items-center gap-4">
+                        <div class="w-full flex flex-row gap-4">
+                            <div class="flex-1 min-w-0 p-2 border border-neutral-800 rounded-xl bg-neutral-950 shadow-2xl">
+                                <img class="rounded" src="./assets/images/custom_minifigure-001.webp" loading="lazy" alt="Photo de la custom Minifigure Men in Bricks et de son packaging">
+                            </div>
+
+                            <div class="flex-1 min-w-0 p-2 border border-neutral-800 rounded-xl bg-neutral-950 shadow-2xl">
+                                <img class="rounded" src="./assets/images/custom_minifigure-002.webp" loading="lazy" alt="Photo de la custom Mionifigure Men in Bricks">
+                            </div>
+                        </div>
+
+                        <div class="w-full flex flex-row gap-4">
+                            <div class="flex-1 min-w-0 p-2 border border-neutral-800 rounded-xl bg-neutral-950 shadow-2xl">
+                                <img class="rounded" src="./assets/images/custom_minifigure-003.webp" loading="lazy" alt="Photo du packaging avant de la custom Minifigure Men in Bricks">
+                            </div>
+
+                            <div class="flex-1 min-w-0 p-2 border border-neutral-800 rounded-xl bg-neutral-950 shadow-2xl">
+                                <img class="rounded" src="./assets/images/custom_minifigure-004.webp" loading="lazy" alt="Photo du packaging arrière de la custom Minifigure Men in Bricks">
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="w-full -mt-1 pe-4 text-end text-xs italic leading-relaxed">Merci à <a class="text-[var(--yellow)] decoration-1 hover:underline underline-offset-4" href="https://www.instagram.com/laurent_delcroix/" target="_blank" rel="noopener noreferrer">Laurent Delcroix</a> pour la magnifique photo qu'il nous a réalisé, foncez voir son travail !!!</p>
                 </div>
             </section>
         </main>
@@ -346,22 +560,29 @@
             <ul class="w-full flex flex-row justify-evenly items-center gap-2">
                 <li class="flex-1">
                     <a class="move-to-top flex flex-col justify-center items-center gap-2 cursor-pointer" href="#top">
-                        <i class="fa-solid fa-house text-xl"></i>
+                        <i class="fa-solid fa-house text-xl" aria-hidden="true"></i>
                         <span class="text-sm">Accueil</span>
                     </a>
                 </li>
 
                 <li class="flex-1">
                     <a class="flex flex-col justify-center items-center gap-2 cursor-pointer" href="#listen" data-target="listen">
-                        <i class="fa-solid fa-headphones text-xl"></i>
+                        <i class="fa-solid fa-headphones text-xl" aria-hidden="true"></i>
                         <span class="text-sm">Écouter</span>
                     </a>
                 </li>
 
                 <li class="flex-1">
                     <a class="flex flex-col justify-center items-center gap-2 cursor-pointer" href="#about" data-target="about">
-                        <i class="fa-solid fa-cube text-xl"></i>
+                        <img class="w-4.5" src="./assets/images/lego-brick-white.webp" loading="lazy" alt="Brique LEGO®">
                         <span class="text-sm">À propos</span>
+                    </a>
+                </li>
+
+                <li class="flex-1">
+                    <a class="flex flex-col justify-center items-center gap-2 cursor-pointer" href="#goodies" data-target="goodies">
+                        <i class="fa-solid fa-basket-shopping text-xl" aria-hidden="true"></i>
+                        <span class="text-sm">Goodies</span>
                     </a>
                 </li>
             </ul>
