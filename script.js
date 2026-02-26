@@ -95,7 +95,3 @@ AOS.init({
   mirror: false,
   anchorPlacement: "top-top"
 });
-
-window.addEventListener("resize", () => {
-  window.location.reload();
-});
