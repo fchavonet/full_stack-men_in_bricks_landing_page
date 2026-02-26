@@ -81,3 +81,21 @@ const copyrightYear = document.getElementById("copyright-year");
 if (copyrightYear) {
   copyrightYear.textContent = String(new Date().getFullYear());
 }
+
+
+/*****************************************
+* Animate On Scroll (AOS) Initialization *
+*****************************************/
+
+AOS.init({
+  delay: 0,
+  duration: 500,
+  easing: "ease-in-out",
+  once: false,
+  mirror: false,
+  anchorPlacement: "top-top"
+});
+
+window.addEventListener("resize", () => {
+  window.location.reload();
+});
